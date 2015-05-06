@@ -1,0 +1,66 @@
+﻿@model IBFree.Models.BigViewModel
+
+@{
+    ViewBag.Title = "Create";
+    var f18 = ViewBag.Boo;
+    var f1 = ViewBag.bla ;
+}
+<br/>
+<br />
+<br />
+<div id="TheDog"> <img src="~/Content/Images/Ruff.png" class="img-responsive" alt="The Ruff" style='width:400px'></div>
+<h2> @Html.DisplayFor(x=> f1)</h2>
+ <h3>Contains @Html.DisplayFor(x => f18)</h3>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <h3> Please select your main symptom and indiciate the severity</h3>
+            <br />
+            <br />
+
+            @*<div class="form-group">*@
+            @Html.LabelFor(model => model.Symptoms, htmlAttributes: new { @class = "control-label col-md-2" })
+            @*<div class="col-md-10">*@
+            @Html.EnumDropDownListFor(model => model.Symptoms, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Symptoms, "", new { @class = "text-danger" })
+            <br />
+            @*</div>*@
+            @*</div>*@
+            @*<div class="form-group">*@
+            @Html.LabelFor(model => model.Severity, htmlAttributes: new { @class = "control-label col-md-2" })
+            @*<div class="col-md-10">*@
+            @Html.EnumDropDownListFor(model => model.Severity, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Severity, "", new { @class = "text-danger" })
+
+
+            @*</div>*@
+            @*</div>*@
+
+
+            <div class="col-md-offset-2 col-md-10">
+
+
+                <div id="AddBox"> <input type="submit" value="Add to my results" class="btn btn-default" style='width:570px' /> </div>
+            </div>
+            @*<div class="form-group">*@
+
+            @*</div>*@
+        </div>
+    }
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    @*<div>*@
+    @*@Html.ActionLink("Back to List", "Index")
+        </div>*@

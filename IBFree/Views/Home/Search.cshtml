@@ -1,0 +1,110 @@
+﻿@model IEnumerable<IBFree.Models.BAdFoodListViewModel>
+
+    @{
+        ViewBag.Title = "Search";
+    }
+
+<br/>
+<h2> Welcome to the IB Free, the app designed to help sufferers of Irritable Bowel Syndrome. </h2>
+<br/>
+
+<br/>
+
+
+<p> Researchers have found that certain foods containing FODMAPS or short chain carbohydrates are known to cause bowel symptoms in IBS sufferers. </p>
+<p> By restricting these FODMAP foods in your diet, you can reduce your symptoms by over 70%. So let's get started!</p>
+<p> Take a food intolerance challenge or use the search bar to look up what foods contain those nasty FODMAPS! </p>
+
+@*@using (Html.BeginForm("Search", "Home", FormMethod.Get))*@
+<div id="SearchFloat">
+    @using (Html.BeginForm("Challenge", "Home", FormMethod.Get))
+    {
+        <br />
+
+        <input type="submit" name="mychallenge" value="Take A Challenge" style='width:420px' />
+
+        <h4> OR</h4>
+    }
+    </div>
+    <div id="SearchFloat1" style="vertical-align:central;">
+    @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+    {
+        <form method="get">
+
+            <input type="search" name="searchTerm" />
+            <input id="Submit1" type="submit" value="Search by Name" style='width:130px' />
+        </form>
+    }
+
+</div>
+
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fructan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sorbitol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mannitol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fructose)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GOS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lactose)
+            </th>
+         
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fructan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sorbitol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mannitol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fructose)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GOS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lactose)
+                </td>
+             
+                <td>
+                    <div class="display-field"><img src="@Url.Content(item.Image)" /></div>
+                </td>
+
+            </tr>
+        }
+        
+
+
+    </table>
+
+
+
+
+

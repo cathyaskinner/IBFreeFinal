@@ -1,0 +1,81 @@
+﻿@model IBFree.Models.BadFood
+
+@{
+    ViewBag.Title = "Challenge";
+    //var Chall = ViewBag.Chall; 
+ 
+}
+
+
+
+@using (Html.BeginForm("Day1", "Home", FormMethod.Get))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <p></p>
+        <div class="editor-label">
+            <table style="visibility: @(Model.Lactose == false ? "hidden" : "visible") "/>
+          
+                    <h2>
+                        Your challenge food is: 
+                        @*@Html.LabelFor(model => model.Name)*@
+                        @Html.DisplayFor(model => model.Name)
+                    </h2>
+
+            <br />
+            <h4>Best of luck!!! </h4>
+</div>
+        <p></p>
+        <p></p> 
+        <div class="display-field"><img src="@Url.Content(Model.Image)" /></div>
+        <p></p>
+        <p></p>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Fructan)
+            @Html.DisplayFor(model => model.Fructan)
+        </div>
+        <p></p>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sorbitol)
+            @Html.DisplayFor(model => model.Sorbitol)
+        </div>
+        <p></p>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Fructose)
+            @Html.DisplayFor(model => model.Fructose)
+        </div>
+        <p></p>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GOS)
+            @Html.DisplayFor(model => model.GOS)
+        </div>
+        <p></p>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mannitol)
+            @Html.DisplayFor(model => model.Mannitol)
+        </div>
+        <p></p>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Lactose)
+            @Html.DisplayFor(model => model.Lactose)
+        </div>
+        <p></p>
+        <p></p>
+            <p>
+                <input type="submit" name="Chall" value="Accept Challenge" />
+            </p>
+
+
+        </div>
+    }
+
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>

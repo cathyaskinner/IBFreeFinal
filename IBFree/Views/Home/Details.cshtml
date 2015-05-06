@@ -1,0 +1,50 @@
+﻿@model IBFree.Models.BigViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BigViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Iritance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Iritance)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Symptoms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Symptoms)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Severity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Severity)
+        </dd>
+     
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ImputId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

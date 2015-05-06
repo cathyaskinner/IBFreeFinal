@@ -1,0 +1,155 @@
+﻿.container
+{ 
+    background-color: white;
+}
+
+.navbar-collapse collapse
+{
+ background-color: #000000;
+ color: #ff0000;
+ 
+}
+
+/*.nav navbar-nav
+{
+    color: red;
+}*/
+                
+
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #93c54b;
+    color:  #625d5d;
+    font-family: Perpetua;
+   
+}
+ /*added next two bits*/
+
+/*this is for the IB Free in header*/
+ .navbar-header
+ {
+     background-color: #93c54b;
+     color: white;
+ }
+
+ #SearchFloat{
+     
+     font-size: 18px;
+     /*float: none !important;
+     float: left !important;*/
+     text-align: left;
+    
+ }
+
+  #SearchFloat1{
+     
+     font-size: 18px;
+     
+    
+ }
+/*img {
+    position: relative;
+    left: -20px;
+}*/
+
+
+
+/*nav bars link css*/
+ul li a{
+    
+    background-color: white;
+     
+    color: #93c54b !important;
+
+    font-size: 18px !important;
+    font-weight: bold !important;
+    
+    
+    
+    
+}
+
+ul li a:hover
+{
+    color:Red !important;
+    
+    
+}
+
+/*h2.pos_right {
+    position: relative;
+    left: 20px;
+}*/
+/*#BadFoodHeader
+{ padding: 20px;  
+  padding-left: 20px;
+}*/
+
+
+
+.display-field img
+{
+    float: right;
+}
+
+#Fodmaps 
+{
+   display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p1 {
+    float: none;
+    float: right;
+    font-size: 15px;
+    font: #93c54b;
+}
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: white;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+p {
+    font-size: 15px;
+    font: #93c54b;
+    font-family: 'Comic Sans MS';
+}
+
+/*footer {
+    float: none;
+   
+}*/
+
+#TheDog 
+{
+    float: right !important;
+}
+
+
+.btn btn-default
+{
+    display: block;
+    font-size: 22px !important;
+}

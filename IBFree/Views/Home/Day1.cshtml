@@ -1,0 +1,39 @@
+﻿@model IBFree.Models.BigViewModel
+
+@{
+    ViewBag.Title = "Day1";
+    var f1 = ViewBag.bla;
+    var f18 = ViewBag.Boo;
+}
+<br />
+<br />
+<br />
+<br />
+<div class="display-field"><img src="@Url.Content("~/Content/Images/Fodmaps3.png")" style="width: 500px; height:500px;" ; /></div>
+                         
+<h2>Challenge Day 1</h2>
+<br />
+<br />
+<h2>Take one tablespoon/ 5 grams of @Html.DisplayFor(x => f1)</h2>
+<h3> This food contains:  @Html.DisplayFor(x => f18)</h3>
+<br />
+<br />
+<h3> I have taken the challenge and :</h3>
+
+    
+
+<div aligh="left">
+        @using (Html.BeginForm("Day2", "Home", FormMethod.Get))
+        {
+            <h3>&nbsp;<input type="submit" name="NoSymptoms" id="Challange Gave Me No Symptoms" style='width:400px' value=" No Symptoms" /></h3>
+        }
+        <br />
+        <br />
+        @using (Html.BeginForm("Create", "BigViewModels1", FormMethod.Get))
+        {
+            <h3>&nbsp;<input type="submit" name="Symptoms" id="Challenge Gave me Symptoms" style='width:400px' value=" Symptoms" /></h3>
+        }
+
+    </div>
+ 
+  

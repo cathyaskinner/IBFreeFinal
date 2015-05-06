@@ -1,0 +1,50 @@
+﻿@model  IBFree.Models.BigViewModel
+@{
+    ViewBag.Title = "BigView";
+
+
+    var f1 = ViewBag.bla;
+    var f18 = ViewBag.Boo;
+}
+
+
+<h2> Your challange food was a  @Html.DisplayFor(x => f1)</h2>
+<h3> Contains:  @Html.DisplayFor(x => f18)</h3>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <h3> Please choose one of the following symptoms</h3>
+
+        @Html.EnumDropDownListFor(model => model.Symptoms, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Symptoms, "", new { @class = "text-danger" })
+
+        <h3> Please choose saverity</h3>
+        
+        @Html.EnumDropDownListFor(model => model.Severity, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Severity, "", new { @class = "text-danger" })
+       
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
